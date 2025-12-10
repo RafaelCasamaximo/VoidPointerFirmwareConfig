@@ -39,7 +39,7 @@ jobs:
         run: west zephyr-export
 
       - name: West Build (voidPointer)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=voidPointer -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano_v2 -S studio-rpc-usb-uart -- -DSHIELD=voidPointer -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 voidpointer_nice_nano_v2.uf2
